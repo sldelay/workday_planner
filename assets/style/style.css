@@ -4,16 +4,37 @@ body {
 
 .title {
     text-align: center;
-    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 1.25em;
+    text-align: center;
+}
+
+p.col.s1 {
+    cursor: default;
 }
 
 
-.container {
+div.container {
     margin-bottom: 4em;
     background-color: white;
-    padding: 2em;
+    padding: 3em;
+    border-radius: .75em;
+    
 }
 
 .material-icons {
     cursor: pointer;
+    margin-top: .53em;
 }
+
+.past {
+    color: lightgray;
+}
+
+.future {
+    color: aquamarine;
+}
+
