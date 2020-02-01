@@ -1,5 +1,5 @@
 $(function () {
-
+     // this is my array of objects that holds my hour row info
     let hourSlot = [
 
         {
@@ -44,12 +44,12 @@ $(function () {
 
     let savedTasks;
 
-    let todaysDate = moment().format("dddd, MMMM Do, YYYY")
+    let todaysDate = moment().format("dddd, MMMM Do, YYYY") // setting todays date is the ".todaysDate h2 tag"
     $(".todaysDate").text(todaysDate);
 
-    let index = 0;
+    let index = 0; 
 
-    let createHourRows = function () {
+    let createHourRows = function () { // this function dynamically adds the hour rows and sets data attr for some of the elements
 
         hourSlot.forEach(function (obj) {
             let hour = ["09", "10", "11", "12", "13", "14", "15", "16", "17"]
@@ -81,7 +81,7 @@ $(function () {
     createHourRows(hourSlot)
 
 
-    let getTasks = function () {
+    let getTasks = function () { // this function sets up local storage format or gets already saved tasks
         savedTasks = JSON.parse(localStorage.getItem("storedTasks")); 
         if (!savedTasks) {
             localStorage.setItem("storedTasks", JSON.stringify(hourSlot));
@@ -98,7 +98,7 @@ $(function () {
     getTasks()
 
 
-    $(".material-icons").on("click", function () {
+    $(".material-icons").on("click", function () { //this is an event listener for my add icons that saves the input to local storage 
         let iconSpot = $(this).attr("data-spot");
         let textVal = $(this).siblings("input").val();
         let storedHourSlot = JSON.parse(localStorage.getItem("storedTasks"));
@@ -106,7 +106,7 @@ $(function () {
         localStorage.setItem("storedTasks", JSON.stringify(storedHourSlot));
     })
 
-    let colorCode = function () {
+    let colorCode = function () { // this function assigns a class based on whether or not its past, current, or future
         $(".container").children().each(function () {
             let rowHour = $(this).attr("data-num");
             if (rowHour < (moment().format('HH'))) {
@@ -126,7 +126,7 @@ $(function () {
     }
 
     colorCode()
-    setInterval(colorCode, 10000);
+    setInterval(colorCode, 10000); // this interval makes sure that the hour rows classes stay current 
 
 
 
