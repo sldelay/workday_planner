@@ -1,15 +1,23 @@
 body {
-    background-color: lightgray;
+    background-image: url("./images/natalya-letunova-WjqyWNCYSI8-unsplash.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .title {
     text-align: center;
+    color: white;
+    font-weight: bold;
 }
 
 h2 {
+    color: white;
     font-size: 1.5em;
     margin-bottom: 1.25em;
     text-align: center;
+    font-weight: bold;
 }
 
 p.col.s1 {
