@@ -124,6 +124,7 @@ $(function () {
     }
 
     colorCode()
+    setInterval(colorCode, 10000);
 
 
 
