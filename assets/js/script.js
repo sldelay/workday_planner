@@ -82,8 +82,10 @@ $(function () {
 
 
     let getTasks = function () {
-        localStorage.setItem("storedTasks", JSON.stringify(hourSlot));
-        savedTasks = JSON.parse(localStorage.getItem("storedTasks"));
+        savedTasks = JSON.parse(localStorage.getItem("storedTasks")); 
+        if (!savedTasks) {
+            localStorage.setItem("storedTasks", JSON.stringify(hourSlot));
+        }
         $(".input").each(function () {
             let input = $(this).attr("data-spot");
             if (savedTasks === null) {
